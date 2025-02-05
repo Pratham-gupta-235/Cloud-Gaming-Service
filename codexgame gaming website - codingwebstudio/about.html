@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GAMEXGAME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #000000;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                        url(img/egypt-slider.jpg) center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.2s;
+        }
+
+        .mission {
+            padding: 5rem 2rem;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgb(249, 215, 177);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team {
+            padding: 5rem 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgb(226, 198, 127);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .contact {
+            background: #2c3e50;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p>We're on a mission to transform the digital landscape through innovation and creativity.</p>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Lorem ipsum dolor sit </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Lorem ipsum dolor sit amet.</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Lorem ipsum dolor sit amet consectetur.</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Lorem ipsum dolor sit amet.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h2 style="text-align: center; color: #f9f9f9;">Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Pratham Gupta</h3>
+                <p>Leader & Developer</p>
+            </div>
+            <div class="team-member">
+                <h3>Vinit Upadhyay</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="team-member">
+                <h3>Granth Gupta</h3>
+                <p>Researcher & Co-Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Have questions? We'd love to hear from you.</p>
+        
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Add animation to stats when they come into view
+        const stats = document.querySelectorAll('.stat-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        stats.forEach(stat => {
+            stat.style.opacity = '0';
+            stat.style.transform = 'translateY(20px)';
+            stat.style.transition = 'all 0.6s ease';
+            observer.observe(stat);
+        });
+
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>

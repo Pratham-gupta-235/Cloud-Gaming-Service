@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - GameStream</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.js"></script>
     <style>
         .bg-gaming {
             background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)),
                             url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error-input {
+            border-color: #ef4444 !important;
+        }
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
         }
     </style>
 </head>
@@ -20,7 +44,7 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-purple-500">GameStream</a>
             <div class="space-x-6">
-                <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+                <a href="#" class="text-gray-300 hover:text-white">Home</a>
                 <a href="#" class="text-gray-300 hover:text-white">Browse</a>
                 <a href="#" class="text-gray-300 hover:text-white">Support</a>
             </div>
@@ -35,7 +59,7 @@
                 <p class="text-gray-400">Sign in to continue your gaming journey</p>
             </div>
 
-            <form id="signInForm" class="space-y-6">
+            <form id="signInForm" class="space-y-6" novalidate>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
                     <input 
@@ -46,6 +70,7 @@
                         placeholder="Enter your email"
                         required
                     >
+                    <div id="emailError" class="error-message">Please enter a valid email address</div>
                 </div>
 
                 <div>
@@ -58,6 +83,7 @@
                         placeholder="Enter your password"
                         required
                     >
+                    <div id="passwordError" class="error-message">Password is required</div>
                 </div>
 
                 <div class="flex items-center justify-between">
@@ -74,9 +100,11 @@
 
                 <button 
                     type="submit" 
-                    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200"
+                    id="submitButton"
+                    class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center"
                 >
-                    Sign In
+                    <span>Sign In</span>
+                    <div id="spinner" class="spinner ml-3"></div>
                 </button>
             </form>
 
@@ -86,65 +114,125 @@
                     <a href="#" class="text-purple-400 hover:text-purple-300 font-semibold">Sign up now</a>
                 </p>
             </div>
-
-            <!-- Social Login -->
-            <div class="mt-6">
-                <div class="relative">
-                    <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-gray-700"></div>
-                    </div>
-                    <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-gray-800 text-gray-400">Or continue with</span>
-                    </div>
-                </div>
-
-                <div class="mt-6 grid grid-cols-2 gap-4">
-                    <button class="flex items-center justify-center px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-700 transition duration-200">
-                        
-                        <span class="text-gray-300">Google</span>
-                    </button>
-                    <button class="flex items-center justify-center px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-700 transition duration-200">
-
-                        <span class="text-gray-300">Discord</span>
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 
     <script>
-        document.getElementById('signInForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const response = await fetch('http://localhost:3000/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, password }),
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    // Store the token
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('user', JSON.stringify(data.user));
-                    
-                    // Redirect to home page
-                    window.location.href = '/';
-                } else {
-                    alert(data.message || 'Sign in failed');
-                }
-            } catch (error) {
-                alert('An error occurred. Please try again.');
-                console.error('Error:', error);
+        class SignInForm {
+            constructor() {
+                this.form = document.getElementById('signInForm');
+                this.emailInput = document.getElementById('email');
+                this.passwordInput = document.getElementById('password');
+                this.submitButton = document.getElementById('submitButton');
+                this.spinner = document.getElementById('spinner');
+                this.emailError = document.getElementById('emailError');
+                this.passwordError = document.getElementById('passwordError');
+                
+                this.setupEventListeners();
             }
-        });
+
+            setupEventListeners() {
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+                this.emailInput.addEventListener('input', () => this.validateEmail());
+                this.passwordInput.addEventListener('input', () => this.validatePassword());
+            }
+
+            validateEmail() {
+                const email = this.emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const isValid = emailRegex.test(email);
+
+                this.toggleError(this.emailInput, this.emailError, isValid);
+                return isValid;
+            }
+
+            validatePassword() {
+                const password = this.passwordInput.value.trim();
+                const isValid = password.length >= 6;
+
+                this.toggleError(this.passwordInput, this.passwordError, isValid);
+                return isValid;
+            }
+
+            toggleError(input, errorElement, isValid) {
+                if (!isValid) {
+                    input.classList.add('error-input');
+                    errorElement.style.display = 'block';
+                } else {
+                    input.classList.remove('error-input');
+                    errorElement.style.display = 'none';
+                }
+            }
+
+            showLoading(loading) {
+                this.submitButton.disabled = loading;
+                this.spinner.style.display = loading ? 'block' : 'none';
+                this.submitButton.querySelector('span').style.opacity = loading ? '0.7' : '1';
+            }
+
+            showToast(message, success = true) {
+                Toastify({
+                    text: message,
+                    duration: 3000,
+                    gravity: "top",
+                    position: "right",
+                    style: {
+                        background: success ? "#10B981" : "#EF4444",
+                    }
+                }).showToast();
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+
+                // Validate form
+                const isEmailValid = this.validateEmail();
+                const isPasswordValid = this.validatePassword();
+
+                if (!isEmailValid || !isPasswordValid) {
+                    return;
+                }
+
+                this.showLoading(true);
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email: this.emailInput.value.trim(),
+                            password: this.passwordInput.value
+                        }),
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        // Store auth data
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('user', JSON.stringify(data.user));
+                        
+                        this.showToast('Successfully signed in!');
+                        
+                        // Redirect after successful toast
+                        setTimeout(() => {
+                            window.location.href = '/';
+                        }, 1000);
+                    } else {
+                        throw new Error(data.message || 'Invalid credentials');
+                    }
+                } catch (error) {
+                    this.showToast(error.message || 'Sign in failed', false);
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+        }
+
+        // Initialize the form
+        new SignInForm();
     </script>
 </body>
 </html>

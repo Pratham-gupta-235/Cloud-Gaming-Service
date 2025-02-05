@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODEXGAME</title>
+    <title>GAMEXGAME</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="globle.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
     <style>
         :root {
     --dark-bg: #121212;
@@ -21,28 +22,15 @@
 /* Base styles */
 body {
     background-color: var(--dark-bg);
-    color: var(--text-primary);
 }
     </style>
 </head>
 
 <body>
+    <!-- Nav Bar -->
     <header>
         <nav class="container">
             <div class="nav1 flex">
-                <!-- <div class="icons flex">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-google-plus-g"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-twitch"></i>
-                </div> -->
-                <!-- <div class="lsbtn flex">
-                    <button>LOGIN</button>
-                    <button>SIGN UP</button>
-                </div> -->
             </div>
             <div class="mainnav flex">
                 <div class="logo">
@@ -52,11 +40,11 @@ body {
                     <ul class="flex">
                         <li><a href="/" class="active">Home</a></li>
                         <li><a href="/">About</a></li>
-                        <li><a href="/">Blog</a></li>
-                        <li><a href="/">Games<i class="fa-solid fa-angle-down"></i></a></li>
+                        <!-- <li><a href="/">Blog</a></li> -->
+                        <!-- <li><a href="/">Games<i class="fa-solid fa-angle-down"></i></a></li> -->
                         <li><a href="/">Community</a></li>
                         <li><a href="/">eSport</a></li>
-                        <li><a href="/">Pages<i class="fa-solid fa-angle-down"></i></a></li>
+                        <!-- <li><a href="/">Pages<i class="fa-solid fa-angle-down"></i></a></li> -->
                         <li><a href="/">Contact</a></li>
                     </ul>
                 </div>
@@ -96,14 +84,15 @@ body {
             <div class="dot"></div>
         </div>
     </header>
-
+    <!-- Hero Section -->
     <main>
-        <div class="threebox container flex">
+        <div class="threebox container flex" style="margin-bottom: 30px;">
             <div class="cbox">
+                <div class="dark"></div>
                 <img src="img/box-1-bg.jpg" alt="title">
                 <div class="cboxde">
                     <h5>OUR ALL GAMES</h5>
-                    <h2>CODEX GAMES</h2>
+                    <h2>GAMEX GAMES</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum ipsa modi soluta nam error
                         deleniti neque impedit earum omnis.</p>
                     <a href="/">All GAMES</a>
@@ -113,7 +102,7 @@ body {
                 <img src="img/box-2-bg.jpg" alt="title">
                 <div class="cboxde">
                     <h5>OUR ALL GAMES</h5>
-                    <h2>CODEX GAMES</h2>
+                    <h2>GAMEX GAMES</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum ipsa modi soluta nam error
                         deleniti neque impedit earum omnis.</p>
                     <a href="/">All GAMES</a>
@@ -123,244 +112,11 @@ body {
                 <img src="img/box-3-bg.jpg" alt="title">
                 <div class="cboxde">
                     <h5>OUR ALL GAMES</h5>
-                    <h2>CODEX GAMES</h2>
+                    <h2>GAMEX GAMES</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum ipsa modi soluta nam error
                         deleniti neque impedit earum omnis.</p>
                     <a href="/">All GAMES</a>
                 </div>
-            </div>
-        </div>
-        <div class="container filter flex">
-            <button class="active">ALL</button>
-            <button>PLAYSTATION 4</button>
-            <button>UPLAY</button>
-            <button>XBOX ONE</button>
-            <button>ORIGIN</button>
-            <button>STEAM</button>
-        </div>
-        <div class="gamecards container flex">
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/egypt and world.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ACTION</a>
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>EGYPT AND WORLD</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">PLAYSTATION 4</a>
-                            <span>,</span>
-                            <a href="/">PLAYSTATION 4</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/spacewars.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>SPACE WARS</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">STEAM</a>
-                            <span>,</span>
-                            <a href="/">XBOX ONE</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/return of the cars.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">RACING</a>
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>RETURN OF THE CARS</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">UPLAY</a>
-                            <span>,</span>
-                            <a href="/">XBOX ONE</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/cyberpunk.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ACTION</a>
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>CYBERPUNK</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">PLAYSTATION 4</a>
-                            <span>,</span>
-                            <a href="/">STEAM 4</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/lords-of-the-fallen-warrior.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>Lords of the fallen warrior</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">PLAYSTATION 4</a>
-                            <span>,</span>
-                            <a href="/">steam</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/the-witcher-1.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>EGYPT AND WORLD</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">PLAYSTATION 4</a>
-                            <span>,</span>
-                            <a href="/">origin</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/gta-5.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ACTION</a>
-                        <a href="/">racing</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>GTA 5</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">PLAYSTATION 4</a>
-                            <span>,</span>
-                            <a href="/">steam</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="cardimg">
-                    <a href="/">
-                        <img src="img/uncharted-4.jpg" alt="">
-                    </a>
-                    <div class="tegs">
-                        <a href="/">ADVANTURE</a>
-                        <i class="fa-solid fa-tags"></i>
-                    </div>
-                </div>
-                <div class="cardinfo">
-                    <h2>uncharted 4: thief's end</h2>
-                    <div class="playteg flex">
-                        <i class="fa-solid fa-tv"></i>
-                        <h3 class="flex">
-                            <a href="/">PLAYSTATION 4</a>
-                            <span>,</span>
-                            <a href="/">steam</a>
-                        </h3>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, sequi.</p>
-                </div>
-            </div>
-        </div>
-        <div class="allgamebtn flex container">
-            <a href="/">
-                <button>ALL GAMES</button>
-            </a>
-        </div>
-        <div class="gamesearch flex">
-            <div class="container flex">
-                <h2>GAME SEARCH</h2>
-                <form action="submit" class="flex">
-                    <input type="text" placeholder="keyword">
-                    <select name="name" id="">
-                        <option value="">Platform</option>
-                        <option value="Mac OS X">Mac OS X</option>
-                        <option value="Microsoft Windows">Microsoft Windows</option>
-                        <option value="Origin">Origin</option>
-                        <option value="Playstation 4">Playstation 4</option>
-                        <option value="Steam">Steam</option>
-                    </select>
-                    <select name="name" id="">
-                        <option value="">Genre</option>
-                        <option value="ACTION">ACTION</option>
-                        <option value="ADVANTURE">ADVANTURE</option>
-                        <option value="RACING">RACING</option>
-                        <option value="SPORTS">SPORTS</option>
-                        <option value="SIMULATION">SIMULATION</option>
-                    </select>
-                    <select name="name" id="">
-                        <option value="">Language</option>
-                        <option value="English">English</option>
-                        <option value="German">German</option>
-                    </select>
-                    <button type="submit">SEARCH</button>
-                </form>
             </div>
         </div>
         <div class="newrelesed flex">
@@ -403,7 +159,10 @@ body {
                         </div>
                     </div>
                     <div class="fhovercont">
-                        <h2>space wars</h2>
+                        <h2>Star wars</h2>
+                        <p style="color: white; font-weight: 700; transition: .6s;" class="game_about">Star Wars Jedi: Fallen Order is a singleplayer game.The story revolves around a survivor of Order 66, Cal Kestis, who is on the run 
+                            from the Empire and its Inquisitors.</p>
+                        <button class="play_button" style="font-weight: 600;">Play Now</button> 
                     </div>
                 </div>
                 <div class="fcard">
@@ -429,12 +188,14 @@ body {
                     </div>
                     <div class="fhovercont">
                         <h2>cyberpunk</h2>
+                        <p style="color: white; font-weight: 700; margin-bottom: 20px;" class="game_about">In Night City, a mercenary known as V navigates a dystopian society in which the line between humanity and technology becomes blurred</p>
+                        <button class="play_button" style="font-weight: 600;">Play Now</button>
                     </div>
                 </div>
                 <div class="fcard">
-                    <img src="img/the-witcher-1.jpg" alt="">
+                    <img src="img/WhatsApp Image 2025-02-05 at 13.21.39_44eebb98.jpg" alt="">
                     <div class="fcarddetails">
-                        <h2>the worrior 3</h2>
+                        <h2>Valorant</h2>
                         <div class="tegs2 flex">
                             <div class="teg flex">
                                 <i class="fa-solid fa-tv"></i>
@@ -453,7 +214,9 @@ body {
                         </div>
                     </div>
                     <div class="fhovercont">
-                        <h2>the worrior 3</h2>
+                        <h2>Valorant</h2>
+                        <p style="color: white; font-weight: 700; margin-bottom: 20px; font-size: 15px;" class="game_about">A free-to-play game, this takes inspiration from the Counter-Strike series, borrowing several mechanics such as the buy menu, spray patterns,and inaccuracy while moving.</p>
+                        <button class="play_button" style="font-weight: 600;">Play Now</button>
                     </div>
                 </div>
                 <div class="fcard">
@@ -533,7 +296,7 @@ body {
                 </div>
             </div>
         </div>
-        <div class="blogandnews flex">
+        <!-- <div class="blogandnews flex">
             <div class="container">
                 <h2>blog&nbsp;<span>& news</span></h2>
                 <div class="threecards flex">
@@ -608,7 +371,7 @@ body {
                 <div class="aboutusdetails">
                     <div class="newretitle">
                         <h2>About the</h2>
-                        <h2>codex</h2>
+                        <h2>gamex</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, debitis dolorum nostrum laudantium
                         odio blanditiis repudiandae autem. Culpa cum numquam voluptates consequatur saepe similique? Ea
@@ -616,49 +379,7 @@ body {
                     <div class="flex">
                         <a href="/">read more</a>
                     </div>
-                </div>
-                <div class="aboutusimg">
-                    <img src="img/codingwebstudio.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="gameshop container flex">
-            <h2>game&nbsp;<span>shop</span></h2>
-            <div class="shopcards flex">
-                <div class="scard">
-                    <img src="img/cpu.png" alt="">
-                    <div class="scarddetails">
-                        <h3>Gaming cpu</h3>
-                        <h3>₹42000</h3>
-                    </div>
-                </div>
-                <div class="scard">
-                    <img src="img/headphone.jpg" alt="">
-                    <div class="scarddetails">
-                        <h3>headphone</h3>
-                        <h3>₹42000</h3>
-                    </div>
-                </div>
-                <div class="scard">
-                    <img src="img/mouse.png" alt="">
-                    <div class="scarddetails">
-                        <h3>Mouse</h3>
-                        <h3>₹42000</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="gamesearch flex">
-            <div class="container flex">
-                <h2>newsletter</h2>
-                <form action="submit" class="flex">
-                    <input type="text" placeholder="Your email address">
-                    <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Last Name">
-                    <button type="submit">SUBMIT</button>
-                </form>
-            </div>
-        </div>
+                </div> -->
         <div class="socialicons flex container">
             <div class="social">
                 <i class="fa-brands fa-facebook-f"></i>
@@ -738,58 +459,11 @@ body {
                         </div>
                     </div>
                 </div>
-                <div class="appsec">
-                    <div class="platform flex">
-                        <div class="apps flex">
-                            <i class="fa-brands fa-apple"></i>
-                            <div class="appde">
-                                <h4>Buy now via</h4>
-                                <h4>Apple Store</h4>
-                            </div>
-                        </div>
-                        <div class="apps flex">
-                            <i class="fa-brands fa-google-play"></i>
-                            <div class="appde">
-                                <h4>Buy now via</h4>
-                                <h4>Google Play</h4>
-                            </div>
-                        </div>
-                        <div class="apps flex">
-                            <i class="fa-brands fa-steam"></i>
-                            <div class="appde">
-                                <h4>Buy now via</h4>
-                                <h4>Steam</h4>
-                            </div>
-                        </div>
-                        <div class="apps flex">
-                            <i class="fa-brands fa-windows"></i>
-                            <div class="appde">
-                                <h4>Buy now via</h4>
-                                <h4>windows</h4>
-                            </div>
-                        </div>
-                        <div class="apps flex">
-                            <i class="fa-brands fa-amazon"></i>
-                            <div class="appde">
-                                <h4>Buy now via</h4>
-                                <h4>Amezon</h4>
-                            </div>
-                        </div>
-                        <div class="apps flex">
-                            <i class="fa-brands fa-paypal"></i>
-                            <div class="appde">
-                                <h4>Buy now via</h4>
-                                <h4>Paypal</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
         <section class="copyrightsec flex">
             <div class="copyright container flex">
                 <div class="flex">
-                    <h2>code<span>xgame</span></h2>
+                    <h2>game<span>xgame</span></h2>
                     <p>Copyright &copy; 2023 Codingwebstudio - All rights reserved.</p>
                 </div>
                 <ul class="flex">

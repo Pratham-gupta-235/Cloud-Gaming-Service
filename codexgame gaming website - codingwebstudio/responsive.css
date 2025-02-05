@@ -1,0 +1,170 @@
+/* Base responsive container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navigation responsiveness */
+@media (max-width: 768px) {
+    .mainnav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navlist ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .navlist li {
+        margin: 10px 0;
+    }
+}
+
+/* Header content responsiveness */
+@media (max-width: 992px) {
+    .headercont {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .labels {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .headbtn {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Game cards grid responsiveness */
+.gamecards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Filter buttons responsiveness */
+@media (max-width: 768px) {
+    .filter {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .filter button {
+        width: calc(50% - 10px);
+        margin: 5px;
+    }
+}
+
+/* Game search form responsiveness */
+@media (max-width: 992px) {
+    .gamesearch form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gamesearch input,
+    .gamesearch select,
+    .gamesearch button {
+        width: 100%;
+    }
+}
+
+/* Featured games section responsiveness */
+.fgamescards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Blog cards responsiveness */
+@media (max-width: 992px) {
+    .threecards {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tcard {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* About us section responsiveness */
+@media (max-width: 768px) {
+    .aboutus .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutusimg {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+/* Game shop responsiveness */
+.shopcards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Social icons responsiveness */
+@media (max-width: 768px) {
+    .socialicons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social {
+        width: calc(33.33% - 20px);
+        margin: 10px;
+    }
+}
+
+/* Footer responsiveness */
+@media (max-width: 992px) {
+    .footermenu {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footerh2 {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .faboutus .flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .copyright {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .copyright ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}

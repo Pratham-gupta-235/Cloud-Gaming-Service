@@ -13,16 +13,89 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="responsive.css"> -->
     <style>
-        :root {
-    --dark-bg: #121212;
-    --dark-surface: #1e1e1e;
-    --dark-surface-2: #2d2d2d;
-}
+        /* Base styles (mobile-first) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Base styles */
-body {
-    background-color: var(--dark-bg);
-}
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main content grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+
+        .card {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Responsive images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+
+            /* Tablet styles */
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                justify-content: flex-end;
+            }
+        }
+
+        @media (min-width: 1024px) {
+
+            /* Desktop styles */
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            body {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Mobile menu for smaller screens */
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+                text-align: center;
+            }
+        }
+
+        :root {
+            --dark-bg: #121212;
+            --dark-surface: #1e1e1e;
+            --dark-surface-2: #2d2d2d;
+        }
+
+        /* Base styles */
+        body {
+            background-color: var(--dark-bg);
+        }
     </style>
 </head>
 
@@ -69,7 +142,7 @@ body {
                     </h3>
                 </div>
             </div>
-            <h1 id="header_title"  style="color: #ffffff;">EGYPT AND WORLD</h1>
+            <h1 id="header_title" style="color: #ffffff;">EGYPT AND WORLD</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, minima. Illo, inventore ad? Itaque unde,
                 aliquid perferendis temporibus facere delectus qui dolores id esse assumenda aut corporis, magni modi
                 tenetur.</p>
@@ -160,9 +233,11 @@ body {
                     </div>
                     <div class="fhovercont">
                         <h2>Star wars</h2>
-                        <p style="color: white; font-weight: 700; transition: .6s;" class="game_about">Star Wars Jedi: Fallen Order is a singleplayer game.The story revolves around a survivor of Order 66, Cal Kestis, who is on the run 
+                        <p style="color: white; font-weight: 700; transition: .6s; font-size: 15px;" class="game_about">Star Wars Jedi:
+                            Fallen Order is a singleplayer game.The story revolves around a survivor of Order 66, Cal
+                            Kestis, who is on the run
                             from the Empire and its Inquisitors.</p>
-                        <button class="play_button" style="font-weight: 600;">Play Now</button> 
+                        <button class="play_button" style="font-weight: 600;">Play Now</button>
                     </div>
                 </div>
                 <div class="fcard">
@@ -188,7 +263,9 @@ body {
                     </div>
                     <div class="fhovercont">
                         <h2>cyberpunk</h2>
-                        <p style="color: white; font-weight: 700; margin-bottom: 20px;" class="game_about">In Night City, a mercenary known as V navigates a dystopian society in which the line between humanity and technology becomes blurred</p>
+                        <p style="color: white; font-weight: 700; margin-bottom: 20px; font-size: 15px;" class="game_about">In Night
+                            City, a mercenary known as V navigates a dystopian society in which the line between
+                            humanity and technology becomes blurred</p>
                         <button class="play_button" style="font-weight: 600;">Play Now</button>
                     </div>
                 </div>
@@ -215,7 +292,10 @@ body {
                     </div>
                     <div class="fhovercont">
                         <h2>Valorant</h2>
-                        <p style="color: white; font-weight: 700; margin-bottom: 20px; font-size: 15px;" class="game_about">A free-to-play game, this takes inspiration from the Counter-Strike series, borrowing several mechanics such as the buy menu, spray patterns,and inaccuracy while moving.</p>
+                        <p style="color: white; font-weight: 700; margin-bottom: 20px; font-size: 15px;"
+                            class="game_about">A free-to-play game, this takes inspiration from the Counter-Strike
+                            series, borrowing several mechanics such as the buy menu, spray patterns,and inaccuracy
+                            while moving.</p>
                         <button class="play_button" style="font-weight: 600;">Play Now</button>
                     </div>
                 </div>
@@ -242,144 +322,11 @@ body {
                     </div>
                     <div class="fhovercont">
                         <h2>Gta 5</h2>
+                        <p style="color: white; font-weight: 700; margin-bottom: 20px; font-size: 15px;"
+                        class="game_about">Grand Theft Auto V is an action-adventure game played from third person or first person persceptive</p>
+                        <button class="play_button" style="font-weight: 600;">Play Now</button>
                     </div>
                 </div>
-                <div class="fcard">
-                    <img src="img/uncharted-4.jpg" alt="">
-                    <div class="fcarddetails">
-                        <h2>uncharted 4</h2>
-                        <div class="tegs2 flex">
-                            <div class="teg flex">
-                                <i class="fa-solid fa-tv"></i>
-                                <h3 class="flex">
-                                    <a href="/">steam</a>
-                                    <a href="/">xbox one</a>
-                                </h3>
-                            </div>
-                            <div class="teg flex">
-                                <i class="fa-solid fa-tags"></i>
-                                <h3 class="flex">
-                                    <a href="/">advanture</a>
-                                    <a href="/">fps</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fhovercont">
-                        <h2>uncharted 4</h2>
-                    </div>
-                </div>
-                <div class="fcard">
-                    <img src="img/return of the cars.jpg" alt="">
-                    <div class="fcarddetails">
-                        <h2>return of the cars</h2>
-                        <div class="tegs2 flex">
-                            <div class="teg flex">
-                                <i class="fa-solid fa-tv"></i>
-                                <h3 class="flex">
-                                    <a href="/">steam</a>
-                                    <a href="/">xbox one</a>
-                                </h3>
-                            </div>
-                            <div class="teg flex">
-                                <i class="fa-solid fa-tags"></i>
-                                <h3 class="flex">
-                                    <a href="/">advanture</a>
-                                    <a href="/">fps</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fhovercont">
-                        <h2>return of the cars</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="blogandnews flex">
-            <div class="container">
-                <h2>blog&nbsp;<span>& news</span></h2>
-                <div class="threecards flex">
-                    <div class="tcard">
-                        <img src="img/blognews1.jpg" alt="">
-                        <div class="tcarddetails">
-                            <h3>about space and world</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, magnam?</p>
-                            <div class="postby flex">
-                                <div class="flex">
-                                    <i class="fa-brands fa-centercode"></i>
-                                    <h5>coder</h5>
-                                </div>
-                                <div class="flex">
-                                    <i class="fa-solid fa-folder-open"></i>
-                                    <h5>videos</h5>
-                                </div>
-                            </div>
-                            <div class="posttime flex">
-                                <i class="fa-regular fa-clock"></i>
-                                <h5>September 11, 2023</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tcard">
-                        <img src="img/blognews2.jpg" alt="">
-                        <div class="tcarddetails">
-                            <h3>new trailer is released!</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, magnam?</p>
-                            <div class="postby flex">
-                                <div class="flex">
-                                    <i class="fa-brands fa-centercode"></i>
-                                    <h5>coder</h5>
-                                </div>
-                                <div class="flex">
-                                    <i class="fa-solid fa-folder-open"></i>
-                                    <h5>videos</h5>
-                                </div>
-                            </div>
-                            <div class="posttime flex">
-                                <i class="fa-regular fa-clock"></i>
-                                <h5>September 09, 2023</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tcard">
-                        <img src="img/blognews3.jpg" alt="">
-                        <div class="tcarddetails">
-                            <h3>price list of the games</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, magnam?</p>
-                            <div class="postby flex">
-                                <div class="flex">
-                                    <i class="fa-brands fa-centercode"></i>
-                                    <h5>coder</h5>
-                                </div>
-                                <div class="flex">
-                                    <i class="fa-solid fa-folder-open"></i>
-                                    <h5>videos</h5>
-                                </div>
-                            </div>
-                            <div class="posttime flex">
-                                <i class="fa-regular fa-clock"></i>
-                                <h5>September 05, 2023</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="newrelesed flex aboutus">
-            <div class="container flex">
-                <div class="aboutusdetails">
-                    <div class="newretitle">
-                        <h2>About the</h2>
-                        <h2>gamex</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, debitis dolorum nostrum laudantium
-                        odio blanditiis repudiandae autem. Culpa cum numquam voluptates consequatur saepe similique? Ea
-                        repudiandae quo culpa corporis officiis?</p>
-                    <div class="flex">
-                        <a href="/">read more</a>
-                    </div>
-                </div> -->
         <div class="socialicons flex container">
             <div class="social">
                 <i class="fa-brands fa-facebook-f"></i>
@@ -418,7 +365,8 @@ body {
             </div>
             <div class="flex footermenu">
                 <div class="faboutus">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat doloribus voluptates, possimus quos dolorem animi sit nulla cumque eaque ipsa.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat doloribus voluptates, possimus
+                        quos dolorem animi sit nulla cumque eaque ipsa.</p>
                     <div class="flex">
                         <ul class="flex">
                             <li><a href="/"><i class="fa-solid fa-caret-right"></i>Home</a></li>
